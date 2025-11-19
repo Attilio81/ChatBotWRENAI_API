@@ -1,0 +1,92 @@
+.chat-messages {
+  flex: 1;
+  background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.messages-container {
+  height: 100%;
+  padding: 1.5rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Typing indicator */
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.typing-indicator span {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #94a3b8;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.typing-text {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-0.5rem);
+    opacity: 1;
+  }
+}
+
+/* Scrollbar styling */
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+  .messages-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .messages-container {
+    padding: 1rem;
+  }
+}

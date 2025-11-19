@@ -1,0 +1,176 @@
+.chat-header {
+  background: linear-gradient(135deg, #4a90e2 0%, #1e3a8a 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-top {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 0;
+  gap: 0.5rem;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  align-self: flex-start;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.chat-header h1 {
+  display: none;
+}
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+  padding: 0;
+}
+
+.agent-icon {
+  font-size: 1.25rem;
+}
+
+.agent-details {
+  text-align: left;
+}
+
+.agent-name {
+  margin: 0 0 0.1rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+.agent-description {
+  margin: 0;
+  font-size: 0.75rem;
+  color: white;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.session-info {
+  display: none;
+}
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.mode-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 768px) {
+  .chat-header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header-top {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .back-button {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .chat-header h1 {
+    display: none;
+  }
+
+  .agent-info {
+    flex-direction: row;
+    text-align: left;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .agent-details {
+    text-align: center;
+  }
+
+  .agent-icon {
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.35rem;
+  }
+
+  .mode-toggle {
+    flex-direction: row;
+    gap: 0.4rem;
+  }
+}
